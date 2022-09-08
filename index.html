@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="screen">
+        <input type="text" id="screen" placeholder="0" />
+      </div>
+
+      <div class="btn">
+        <button onclick="valuebutton(1)">1</button>
+        <button onclick="valuebutton(2)">2</button>
+        <button onclick="valuebutton(3)">3</button>
+        <button onclick="valuebutton('+')">+</button>
+      </div>
+
+      <div class="btn">
+        <button onclick="valuebutton(4)">4</button>
+        <button onclick="valuebutton(5)">5</button>
+        <button onclick="valuebutton(6)">6</button>
+        <button onclick="valuebutton('-')" id="sub">-</button>
+      </div>
+
+      <div class="btn">
+        <button onclick="valuebutton(7)">7</button>
+        <button onclick="valuebutton(8)">8</button>
+        <button onclick="valuebutton(9)">9</button>
+        <button onclick="valuebutton('*')">*</button>
+      </div>
+
+      <div class="btn">
+        <button onclick="valuebutton(0)">0</button>
+        <button onclick="valuebutton('/')">/</button>
+        <button onclick="calculate('=')">=</button>
+        <button onclick="minimum('C')">C</button><br />
+      </div>
+      <div class="btn">
+        <button onclick="valuebutton('(')">(</button>
+        <button onclick="valuebutton(')')">)</button>
+        <button class="clear" id="clear" onclick="del()">clear</button>
+      </div>
+    </div>
+    <script>
+      var screen = document.getElementById("screen");
+      function valuebutton(number) {
+        screen.value += number;
+      }
+      function del() {
+        screen.value = null;
+      }
+      function calculate() {
+        screen.value = eval(screen.value);
+      }
+      function minimum() {
+        screen.value = screen.value.slice(0, -1);
+      }
+    </script>
+  </body>
+</html>
